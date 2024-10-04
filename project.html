@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Project Management Form</h2>
+<form id="projectForm">
+    <label for="projectId">Project ID:</label>
+    <input type="text" id="projectId" required>
+
+    <label for="projectName">Project Name:</label>
+    <input type="text" id="projectName" required>
+
+    <label for="assignedTo">Assigned To:</label>
+    <input type="text" id="assignedTo" required>
+
+    <label for="assignmentDate">Assignment Date:</label>
+    <input type="date" id="assignmentDate" required>
+
+    <label for="deadline">Deadline:</label>
+    <input type="date" id="deadline" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div id="message" style="margin-top: 20px;"></div>
+
+<script>
+    document.getElementById('projectForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
+        // Get form values
+        const projectId = document.getElementById('projectId').value;
+        const projectName = document.getElementById('projectName').value;
+        const assignedTo = document.getElementById('assignedTo').value;
+        const assignmentDate = document.getElementById('assignmentDate').value;
+        const deadline = document.getElementById('deadline').value;
+
+        // Simulate saving to a database
+        const projectData = {
+            projectId,
+            projectName,
+            assignedTo,
+            assignmentDate,
+            deadline
+        };
+
+        // Save data to local storage (this simulates database storage)
+        localStorage.setItem(project-${projectId}, JSON.stringify(projectData));
+
+        // Display success message
+        document.getElementById('message').innerText = Project ;
+
+        // Clear the form
+        document.getElementById('projectForm').reset();
+    });
+</script>
+
+</body>
+</html>
